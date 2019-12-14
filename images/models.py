@@ -3,7 +3,7 @@ import datetime as dt
 
 # Create your models here.
 class Location(models.Model):
-    name = models.CharField(max_length=45,blank=True)
+    name = models.TextField(max_length=45,blank=True)
 
     def __str__(self):
         return self.name
@@ -12,7 +12,7 @@ class Location(models.Model):
         return self.save()
     
 class Category(models.Model):
-    name = models.CharField(max_length=45,blank=True)
+    name = models.TextField(max_length=45,blank=True)
     
     def save_category(self):
         return self.save()
@@ -33,7 +33,7 @@ class Image(models.Model):
     
     @classmethod
     def get_images(cls):
-        images = cls.objects.filter(image_name__icontains=search_term)
+        images = cls.objects.all()
         return images
     
     @classmethod
