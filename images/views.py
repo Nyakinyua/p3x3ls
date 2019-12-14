@@ -7,3 +7,10 @@ def index(request):
     images = Image.get_images()
     message="This is my message to you"
     return render(request,"index.html", {"message":message})
+
+def image(request,image_id):
+    try:
+        image = Image.objects.get(id=image_id)
+    except DoesNotExist:
+        raise Http404()
+    return render(request,'image.html',{'image':image})

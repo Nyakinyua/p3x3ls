@@ -1,0 +1,27 @@
+{%extends 'layout.html'%}
+
+{% block content %}
+
+<div class="container">
+
+<div class="row">
+<img src="{{image.image.url}}"  class="img-responsive" alt="image_item.image_name">
+</div>
+
+<div class="row">
+<h1>{{image.image_name}}</h1>
+</div>
+
+<h1>{{image.category}}</h1>
+<h1>{{image.description}}</h1>
+<h1>{{image.location}}</h1>
+
+
+
+<div class="row">
+<p>Posted {{image.pub_date|timesince}} from {{image.Location.name}}</p>
+</div>
+
+</div>
+
+{% endblock %}
