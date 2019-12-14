@@ -11,11 +11,20 @@ class Location(models.Model):
     def save_location(self):
         return self.save()
     
+    def delete_location(self):
+        return self.delete()
+    
 class Category(models.Model):
     name = models.TextField(max_length=45,blank=True)
     
     def save_category(self):
         return self.save()
+    
+    def delete_category(self):
+        return self.delete()
+    
+    def __str__(self):
+        return self.name
     
 class Image(models.Model):
     image = models.ImageField(upload_to ='images/')
@@ -55,3 +64,5 @@ class Image(models.Model):
     def search_by_title(cls,search_term):
         image = cls.objects.filter(title__icontains=search_term)
         return image
+    
+    def 
