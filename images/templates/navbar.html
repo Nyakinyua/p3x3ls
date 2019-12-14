@@ -29,14 +29,16 @@
                 <a href="/image/1" class="nav-item nav-link">Image</a>
                 <a href="/admin" class="nav-item nav-link">Admin</a>
             </div>
-            <form class="form-inline">
-                <div class="input-group" action="{% url 'search_results' %}">                    
-                    <input type="text" class="form-control" placeholder="Search Image" name="image">
-                    <div class="input-group-append">
-                        <button type="button" class="btn btn-secondary"><i class="fa fa-search"></i></button>
+            <form class="navbar-form" role="search" action="{% url 'search_results' %}">
+
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Search Image" name="image">
+                      <div class="input-group-btn">
+                            <button type="submit"  class="btn btn-outline-light" >Search</button>
+                      </div>
                     </div>
-                </div>
-            </form>
+          
+                  </form>
            
         </div>
     </nav>

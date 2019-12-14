@@ -7,8 +7,11 @@
 <h2>{{image_item.image_name}}</h2>
 <h5>{{image_item.description}}</h5>
 <small>{{image_item.category}}</small>
-<img style="width:500px; height:250px"src="{{image_item.new_image.url}}" class="img-responsive img-thumbnail" alt="responsive-image">
+<img src="{{image_item.new_image.url}}" class="img-responsive" alt="image" width="250px" height="300px">
+
+<img src="{{image_item.new_image.url}}" alt="image">
 <p>{{image_item.location}}</p>
+<p>{{image_item.new_image.url}}</p>
 {% endfor %}
 
 
