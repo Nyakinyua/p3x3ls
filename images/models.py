@@ -15,3 +15,4 @@ class Category(models.Model):
     
     def save_category(self):
         return self.save()
+    
