@@ -31,3 +31,22 @@ class Image(models.Model):
     def delete_image(self):
         return self.delete()
     
+    @classmethod
+    def get_images(cls):
+        images = cls.objects.filter(image_name__icontains=search_term)
+        return images
+    
+    @classmethod
+    def get_image_by_id(cls,id):
+        image = cls.objects.filter(image_id__icontains=id)
+        return image
+    
+     @classmethod
+    def filter_by_location(cls,location):
+        images = cls.objects.filter(location__image_location__istartswith=location)
+        return images
+    
+    @classmethod
+    def filter_by_category(cls, category):
+        images = cls.objects.filter(category__image_category__istartswith=category)
+        return images
