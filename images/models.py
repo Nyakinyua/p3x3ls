@@ -27,12 +27,15 @@ class Category(models.Model):
         return self.name
     
 class Image(models.Model):
-    image = models.ImageField(upload_to ='images/')
+    image = models.ImageField(upload_to ='images/', null="True",blank=True)
     image_name = models.CharField(max_length=20)
     description = models.TextField()
     location = models.ForeignKey(Location,on_delete=models.CASCADE)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
     pub_date = models.DateTimeField(auto_now_add = True)
+    
+    def __str__(self):
+        return self.image_name
     
     def save_image(self):
         return self.save()
@@ -65,4 +68,5 @@ class Image(models.Model):
         image = cls.objects.filter(title__icontains=search_term)
         return image
     
-    def 
+    class Meta:
+        ordering =  ['image_name']

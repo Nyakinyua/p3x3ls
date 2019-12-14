@@ -3,10 +3,12 @@
 {% block content %}
 {{block.super}}
 <h1 class="text-center"> This is just a basic html page with nothing inside</h1>
-{% for image_item in images%}#}
-<h2>image_item.image_name.</h2>
-<h5>image_item.description</h5>
-<img src="image_item.image.url" class="img" alt="img">
+{% for image_item in images%}
+<h2>{{image_item.image_name}}</h2>
+<h5>{{image_item.description}}</h5>
+<small>{{image_item.category}}</small>
+<img style="width:500px; height:250px"src="{{image_item.image.url}}" class="img-responsive img-thumbnail" alt="responsive-image">
+<p>{{image_item.location}}</p>
 {% endfor %}
 {{message}}
 

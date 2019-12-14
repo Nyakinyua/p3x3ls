@@ -6,7 +6,7 @@ from .models import Image
 def index(request):
     images = Image.get_images()
     message="This is my message to you"
-    return render(request,"index.html", {"message":message})
+    return render(request,"index.html", {"message":message,"images":images})
 
 def image(request,image_id):
     try:
