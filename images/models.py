@@ -50,3 +50,8 @@ class Image(models.Model):
     def filter_by_category(cls, category):
         images = cls.objects.filter(category__image_category__istartswith=category)
         return images
+    
+    @classmethod
+    def search_by_title(cls,search_term):
+        image = cls.objects.filter(title__icontains=search_term)
+        return image
