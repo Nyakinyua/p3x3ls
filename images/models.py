@@ -18,7 +18,7 @@ class Category(models.Model):
         return self.save()
     
 class Image(models.Model):
-    image = models.ImageField(Upload_to ='images/')
+    image = models.ImageField(upload_to ='images/')
     image_name = models.CharField(max_length=20)
     description = models.TextField()
     location = models.ForeignKey(Location,on_delete=models.CASCADE)
@@ -41,7 +41,7 @@ class Image(models.Model):
         image = cls.objects.filter(image_id__icontains=id)
         return image
     
-     @classmethod
+    @classmethod
     def filter_by_location(cls,location):
         images = cls.objects.filter(location__image_location__istartswith=location)
         return images
