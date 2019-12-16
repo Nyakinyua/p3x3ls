@@ -3,30 +3,25 @@
 {% block content %}
 {{block.super}}
 
-<style>
-        #btn-joy {
-            padding: 0;
-            border: none;
-            background: none;
-        }
-    
-    .container-fluid{
-        background-color: rgb(255, 255, 255);
-    }
-    </style>
 <div class="container-fluid">
 
 <div class="card-column row">
     {% for image_item in images%}
 
-    <div class="col-xs-6 col-sm-6 col-md-3 " style="padding-top: 1em;">
-        
+    <div class="col-xs-6 col-sm-6 col-md-3 " style="padding-top: 5em;">
+        <div class="card card-deck" style="width: 22rem; padding: 12px 12px;">
+            <h3>{{image_item.image_name}}</h3>
             
             <a type="" id="btn-joy" data-toggle="modal" data-target="#myModal{{image_item.id}}">
-                    <div class="view overlay zoom "><img src="{{image_item.joy_image.url}}" class="img-responsive" alt="image" style="width: 340px;max-height: auto;">
+                    <div class="view overlay zoom "><img src="{{image_item.joy_image.url}}" class="img-responsive" alt="image" style="width: 300px;max-height: auto;">
             </a> <br>
             <div class="mask flex-center"><p>{{image_item.category}}</p></div>
-        
+        </div>
+            <div class="card-body">
+                <h5 class="card-title">{{image_item.category}}</h5>
+                <a class='btn btn-outline-success' href="/image/{{image_item.id}}">More</a>
+            </div>
+
         </div>
         
     </div>
@@ -64,7 +59,7 @@
             <div class="modal-body">
 
                 <img class="img-responsive modal-image" id="gmi" src="{{image_item.joy_image.url}}" alt="image"
-                    width='380'>
+                    width='350'>
                 <br>
                 <p><span class="modal-span">Location:</span> <br> {{image_item.location}}</p>
                 <br>
@@ -77,8 +72,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-info" data-dismiss="modal">Close</button>
-                <a href="{{ image_item.joy_image.url }}">
-                <input class="form-control" type="text" value="{{ image_item.joy_image.url }}" id="link"></a>
+                <input class="form-control" type="text" value="{{ image_item.joy_image.url }}" id="link">
                 <a onclick="myFunction()"><button type="button" class="btn btn-outline-success">Copy Link</button></a>
 
 
@@ -96,3 +90,11 @@
 </div>
 </div>
 {% endblock %}
+
+<style>
+    #btn-joy {
+        padding: 0;
+        border: none;
+        background: none;
+    }
+</style>
