@@ -11,9 +11,12 @@
     <div class="col-md-3" style="padding-top: 5em;">
         <div class="card card-deck" style="width: 22rem; padding: 5px;">
             <h3>{{image_item.image_name}}</h3>
+            
             <a type="" id="btn-joy" data-toggle="modal" data-target="#myModal{{image_item.id}}">
-                <img src="{{image_item.joy_image.url}}" class="img-responsive" alt="image" style="width: 300px;max-height: auto;">
+                    <div class="view overlay zoom"><img src="{{image_item.joy_image.url}}" class="img-responsive img-fluid" alt="image" style="width: 300px;max-height: auto;">
             </a> <br>
+            <div class="mask flex-center"><p>{{image_item.category}}</p></div>
+        </div>
             <div class="card-body">
                 <h5 class="card-title">{{image_item.category}}</h5>
                 <a class='btn btn-outline-success' href="/image/{{image_item.id}}">More</a>
