@@ -1,12 +1,12 @@
-# [Bavilion](https://github.com/AmosMwangi/bavilion)
+# [Pexels](https://github.com/Nyakinyua/pexels.org)
 
 This project was generated with [Python](https://www.python.org/) version 3.6.9 <br>
 
 ## Author:
-* Amos Mwangi
+* Nyakinyua
 
 ## Description
-It's an webapp that has features of uploading new pics and show location where the image was taken from and also it's type of category. If a pic pleases you just click on it to view it in a zoomed modal and also view it's details.
+A web application that allows a user view various images on the page. The user is also able to expand the image and see more details such as the description and the location. Lastly, the user is able to search for images based on the categotries
 
 ## User Stories
 Features of the application
@@ -30,29 +30,34 @@ Features of the application
 ### Cloning
 * In your terminal:
 
-        $ git clone https://github.com/AmosMwangi/bavilion
-        $ cd Blogs
+        $ git clone https://github.com/Nyakinyua/pexels.org
+        $ cd pexels
 
 ## Running the Application
 * Creating the virtual environment
 
-        $ python3.6 -m venv --without-pip virtual
-        $ source virtual/bin/env
-        $ curl https://bootstrap.pypa.io/get-pip.py | python
+    `$ python3.6 -m venv  virtual`
+    `$ source virtual/bin/env`
+        
 
 * Installing Django and other modules
 
-        $  pip install -r requirements.txt
+    `$  pip install -r requirements.txt`
 
 * To run the application, in your terminal:
 
-        $ chmod +x start.sh
-        $ ./start.sh
+    `$ chmod +x start.sh`
+    `$ ./start.sh`
 
 ## Testing the Application
 * To run the tests for the class files:
 
-        $ python3.6 manage.py test
+    `$ python3.6 manage.py test`
+
+## Contributing
+* To add more column s to the database
+    `$ python3.6 manage.py makemigrations`
+    `$ python3.6 manage.py migrate`
 
 ## Technologies Used
   This project was generated with
@@ -64,10 +69,9 @@ Features of the application
   * HTML
 
 ## Support and contact details
- Incase of a problem, issue or need more clarification, feel free to send an email<br> amosmwangi101@gmail.com <br>
+ In case You have any contributions and add ons to this application or any issues using this code please feel free to get in touch with me via [email](wanyakinyua968@gmail.com)
 
-
-
-### License
-* This project is licensed by [MIT License](LICENSE.txt)<br>
-  Copyright (c) [Bavilion](https://github.com/AmosMwangi/bavilion) 2019<br>
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+MIT License
+\_ **Nyakinyua @2019**
