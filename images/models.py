@@ -27,7 +27,7 @@ class Category(models.Model):
         return self.name
     
 class Image(models.Model):
-    new_image = models.ImageField(upload_to ='images/')
+    joy_image = models.ImageField( upload_to ='images/')
     image_name = models.CharField(max_length=20)
     description = models.TextField()
     location = models.ForeignKey(Location,on_delete=models.CASCADE)
@@ -47,11 +47,7 @@ class Image(models.Model):
     def get_images(cls):
         images = cls.objects.all()
         return images
-    
-    @classmethod
-    def get_image_by_id(cls,id):
-        image = cls.objects.filter(image_id__icontains=id)
-        return image
+  
     
     @classmethod
     def filter_by_location(cls,location):
@@ -64,8 +60,8 @@ class Image(models.Model):
         return images
     
     @classmethod
-    def search_by_title(cls,search_term):
-        image = cls.objects.filter(title__icontains=search_term)
+    def search_by_category(cls,search_term):
+        image = cls.objects.filter(category__name__icontains=search_term)
         return image
     
     class Meta:

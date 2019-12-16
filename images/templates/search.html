@@ -14,12 +14,86 @@
   <div class="row">
 
   {% if images %}
-    {% for image_items in images %}
-      <div class="col-sm-6 col-md-3">
-          <h1>{{image_items.image_name}}</h1>
-
+  <div class="row">
+      {% for image_item in images%}
+  
+      <div class="col-md-3" style="padding-top: 5em;">
+  
+  
+          <div class="card card-deck" style="width: 22rem; padding: 5px;">
+              <h3>{{image_item.image_name}}</h3>
+  
+  
+  
+  
+              <a type="" id="btn-joy" data-toggle="modal" data-target="#myModal{{image_item.id}}">
+                  <img src="{{image_item.joy_image.url}}" class="img-responsive" alt="image" style="width: 300px;max-height: auto;">
+              </a> <br>
+              <div class="card-body">
+                  <h5 class="card-title">{{image_item.category}}</h5>
+                  <a class='btn btn-outline-success' href="/image/{{image_item.id}}">More</a>
+              </div>
+  
+          </div>
+          
       </div>
-    {% endfor %}
+      
+      {% endfor %}
+     
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- Modal -->
+  {% for image_item in images%}
+  <div class="modal fade" id="myModal{{image_item.id}}" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle" style="font-weight: 800;">{{ image_item.image_name }}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+  
+                  <img class="img-responsive modal-image" id="gmi" src="{{image_item.joy_image.url}}" alt="image"
+                      width='380'>
+                  <br>
+                  <p><span class="modal-span">Location:</span> <br> {{image_item.location}}</p>
+                  <br>
+                  <p><span class="modal-span">Category:</span> <br> {{image_item.category}}</p>
+                  <p><span class="modal-span">Description:</span> <br>{{image_item.description}}</p>
+                  <p><span class="modal-span">Posted {{image_item.pub_date|timesince}} ago</p>
+                  <br>
+  
+  
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-info" data-dismiss="modal">Close</button>
+                  <input class="form-control" type="text" value="{{ image_item.joy_image.url }}" id="link">
+                  <a onclick="myFunction()"><button type="button" class="btn btn-outline-success">Copy Link</button></a>
+  
+  
+                  <script>
+                      function myFunction() {
+                          alert('copied link {{ image_item.joy_image.url }} ')
+                      }
+                  </script>
+              </div>
+          </div>
+      </div>
+  </div>
+  {% endfor %}
   {% endif %}
   </div>
 </div>
