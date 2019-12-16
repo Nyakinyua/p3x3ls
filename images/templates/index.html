@@ -19,11 +19,11 @@
 <div class="card-column row">
     {% for image_item in images%}
 
-    <div class="col-xs-6 col-sm-6 col-md-3 " style="padding-top: 5em;">
+    <div class="col-xs-6 col-sm-6 col-md-3 " style="padding-top: 1em;">
         
             
             <a type="" id="btn-joy" data-toggle="modal" data-target="#myModal{{image_item.id}}">
-                    <div class="view overlay zoom "><img src="{{image_item.joy_image.url}}" class="img-responsive" alt="image" style="width: 300px;max-height: auto;">
+                    <div class="view overlay zoom "><img src="{{image_item.joy_image.url}}" class="img-responsive" alt="image" style="width: 340px;max-height: auto;">
             </a> <br>
             <div class="mask flex-center"><p>{{image_item.category}}</p></div>
         
@@ -64,7 +64,7 @@
             <div class="modal-body">
 
                 <img class="img-responsive modal-image" id="gmi" src="{{image_item.joy_image.url}}" alt="image"
-                    width='350'>
+                    width='380'>
                 <br>
                 <p><span class="modal-span">Location:</span> <br> {{image_item.location}}</p>
                 <br>
