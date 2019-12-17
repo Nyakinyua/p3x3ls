@@ -3,7 +3,7 @@ body{
  font-family: 'Courier Prime', monospace; 
 }
 .image2 {
-    height: 400px;
+   
     transition: transform .2s;
 }
 .image2:hover {
