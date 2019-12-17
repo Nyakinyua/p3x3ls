@@ -1,0 +1,1 @@
+heroku pg:push tribune DATABASE_URL --app mtr1bune
