@@ -7,7 +7,7 @@
 
 <div class="card-column row">
     {% for image_item in images%}
-    <!-- <div class="image2"> -->
+    <div class="image2">
     <div class="col-xs-6 col-sm-6 col-md-4 " style="padding-top: 5em;">
         <div class="card card-deck" style="width: 22rem; padding: 12px 12px;">
             <h3>{{image_item.image_name}}</h3>
@@ -18,13 +18,13 @@
             <div class="mask flex-center"><p>{{image_item.category}}</p></div>
         </div>
             <div class="card-body">
-                <h5 class="card-title">{{image_item.category}}</h5>
+                
                 <a class='btn btn-outline-success' href="/image/{{image_item.id}}">More</a>
             </div>
 
         </div>
         
-    <!-- </div> -->
+    </div>
 </div>
 
 
