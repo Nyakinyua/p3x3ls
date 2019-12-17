@@ -18,10 +18,15 @@
     {% block styles %}
     {% bootstrap_css %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    
   {% endblock %}
 </head>
 <body>
   <style>
+      @import url('https://fonts.googleapis.com/css?family=Courier+Prime&display=swap');
+      body{
+        font-family: 'Courier Prime', monospace;
+      }
    /* Media Queries: Tablet Landscape */
 @media screen and (max-width: 1060px) {
     #primary { width:67%; }

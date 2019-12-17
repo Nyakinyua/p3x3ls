@@ -27,22 +27,22 @@ class LocationTestClass(TestCase):
 class CategoryTestClass(TestCase):
     def setUp(self):
         
-        self.Home = Category(name='Home')
+        self.Home = Category(name='art')
 
 # Testing isinstance
     def test_instance(self):
-        self.assertTrue(isinstance(self.Home, Category))
+        self.assertTrue(isinstance(self.art, Category))
 
 # Testing method
     def test_save_method(self):
-        self.Home.save_category()
+        self.art.save_category()
         category = Category.objects.all()
         self.assertTrue(category)
 
     def test_delete_method(self):
-        self.Home = Category(name='Home')
-        self.Home.save_category()
-        self.Home.delete_category()
+        self.art = Category(name='art')
+        self.art.save_category()
+        self.art.delete_category()
         category = Category.objects.all()
         self.assertTrue(category)
         
@@ -51,14 +51,14 @@ class ImagesTestClass(TestCase):
     def setUp(self):
 
         # creating a new place and saving it
-        self.outdoor = Location(name='outdoor')
+        self.outdoor = Location(name='place')
         self.outdoor.save_place()
 
         # creating a new order and saving it
-        self.new_Home = Category(name='Home')
+        self.new_Home = Category(name='art')
         self.new_Home.save()
 
-        self.new_image = Image(image_name='Flower', image_description='A hibiscus flower with bee')
+        self.new_image = Image(image_name='car', image_description='A polished Volkswagen beetle')
         self.new_image.save()
 
         self.new_images.location.add(self.new_location)
@@ -66,7 +66,7 @@ class ImagesTestClass(TestCase):
 
     # Testing isinstance
     def test_instance(self):
-        self.assertTrue(isinstance(self.Flower, Image))
+        self.assertTrue(isinstance(self.car, Image))
         
     def tearDown(self):
         Location.objects.all().delete()
