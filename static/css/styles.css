@@ -2,3 +2,13 @@ body{
  
  font-family: 'Courier Prime', monospace; 
 }
+.image2 {
+    height: 400px;
+    transition: transform .2s;
+}
+.image2:hover {
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    box-shadow: 5px 5px 5px rgb(250, 248, 248);
+}
