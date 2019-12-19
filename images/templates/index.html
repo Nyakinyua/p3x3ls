@@ -3,7 +3,7 @@
 {% block content %}
 {{block.super}}
 
-<div class="container">
+<div class="container-fluid">
 
     <div class="card-column row">
         {% for image_item in images%}
@@ -19,12 +19,6 @@
                 <div class="mask flex-center">
                     <p>{{image_item.category}}</p>
                 </div>
-
-                <div class="card-body">
-
-                    <a class='btn btn-outline-success' href="/image/{{image_item.id}}">More</a>
-                </div>
-
             </div>
 
         </div>
