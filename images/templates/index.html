@@ -2,157 +2,37 @@
 
 {% block content %}
 {{block.super}}
-
-<div class="container-fluid">
-
-    <div class="card-column row">
-        {% for image_item in images%}
-        <div class="image2">
-            <div class="col-xs-4~ col-sm-4~ col-md-4 " style="padding-top: 5em; padding: 26px;">
-
-                <h3>{{image_item.image_name}}</h3>
-
-                <a type="" id="btn-joy" data-toggle="modal" data-target="#myModal{{image_item.id}}">
-                    <div class="view overlay zoom "><img src="{{image_item.joy_image.url}}" class="img-responsive"
-                            alt="image" style="width: 300px;max-height: auto;">
-                </a> <br>
-                <div class="mask flex-center">
-                    <p>{{image_item.category}}</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
+<div id="wrapper">
+    <div id="main">
+        {% for image_item in images %}
+        <article class="thumb">
+            <a href="{{image_item.joy_image.url}}" class="image"><img src="{{image_item.joy_image.url}}"
+                    alt="eiffel tower" /></a>
+            <h2>{{image_item.name}}</h2>
+            <p>{{image_item.category}}</p>
+        </article>
+        {% endfor %}
 
 
 
 
-    {% endfor %}
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-<!-- Modal -->
-{% for image_item in images%}
-<div class="modal fade" id="myModal{{image_item.id}}" tabindex="-1" role="dialog"
-    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">{{ image_item.image_name }}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-
-                <img class="img-responsive modal-image" id="gmi" src="{{image_item.joy_image.url}}" alt="image"
-                    width='350'>
-                <br>
-                <p><span class="modal-span">Location:</span> <br> {{image_item.location}}</p>
-                <br>
-                <p><span class="modal-span">Category:</span> <br> {{image_item.category}}</p>
-                <p><span class="modal-span">Description:</span> <br>{{image_item.description}}</p>
-                <p><span class="modal-span">Posted {{image_item.pub_date|timesince}}</p>
-                <br>
-
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-outline-info" data-dismiss="modal">Close</button>
-                <input class="form-control" type="text" value="{{ image_item.joy_image.url }}" id="link">
-                <a onclick="myFunction()"><button type="button" class="btn btn-outline-success">Copy Link</button></a>
-
-
-                <script>
-                    function myFunction() {
-                        alert('copied link {{ image_item.joy_image.url }} ')
-                    }
-                </script>
-            </div>
-        </div>
     </div>
 </div>
-{% endfor %}
-
-</div>
-</div>
 
 
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
-<!-- Footer -->
-	<section id="footer">
-		<div class="container">
-			<div class="row text-center text-xs-center text-sm-left text-md-left">
-				<div class="col-xs-12 col-sm-4 col-md-4">
-					<h5>Apps and Plugins</h5>
-					<ul class="list-unstyled quick-links">
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Pexels for iOS</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Pexels for Android</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Other plugins & apps</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>
-					</ul>
-				</div>
-				<div class="col-xs-12 col-sm-4 col-md-4">
-					<h5>Free stock Photos</h5>
-					<ul class="list-unstyled quick-links">
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Popular searches</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>black and white Photography</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Best HD Wallpapers</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Happy new Year images</a></li>
-					</ul>
-				</div>
-				<div class="col-xs-12 col-sm-4 col-md-4">
-					<h5>Wallpapers</h5>
-					<ul class="list-unstyled quick-links">
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Galaxy Wallpapers</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Lock screen Wallpaper</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>4k Wallpaper</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Mobile wallpaper</a></li>
-						
-					</ul>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
-					<ul class="list-unstyled list-inline social text-center">
-						<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i></a></li>
-						<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a></li>
-						<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram"></i></a></li>
-						<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus"></i></a></li>
-						<li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
-					</ul>
-				</div>
-				</hr>
-			</div>	
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-					<p><u><a href="https://www.pexles.com/">Pexels</a></u> Beautiful free photos</p>
-					<p class="h6">&copy All right Reversed.<a class="text-green ml-2" href="https://www.sunlimetech.com" target="_blank">pexels.org</a></p>
-				</div>
-				</hr>
-			</div>	
-		</div>
-	</section>
-	<!-- ./Footer -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% endblock %}
-
-<style>
-    #btn-joy {
-        padding: 0;
-        border: none;
-        background: none;
-    }
-</style>
