@@ -1,4 +1,4 @@
-# [Pexels](https://github.com/Nyakinyua/pexels.org)
+# [P3x3ls](https://github.com/Nyakinyua/pexels.org)
 
 This project was generated with [Python](https://www.python.org/) version 3.6.9 <br>
 
