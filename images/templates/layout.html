@@ -2,105 +2,122 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="HandheldFriendly" content="true">
-    <link rel="stylesheet" href="../../static/assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="../../static/assets/css/noscript.css" /></noscript>
-    {% if title %}
-    <title>maPicha Fine- {{title}}</title>
-    {% else %}
-    <title>Mapicha Fine</title>
-    {% endif %}
 
-    {% block styles %}
-    {% bootstrap_css %}
-    <link rel="stylesheet" href="{% static 'assets/css/static' %}">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
+  <link rel="stylesheet" href="../../static/assets/css/main.css" />
+  <noscript>
+    <link rel="stylesheet" href="../../static/assets/css/noscript.css" /></noscript>
+  {% if title %}
+  <title>maPicha Fine- {{title}}</title>
+  {% else %}
+  <title>Mapicha Fine</title>
+  {% endif %}
+
+  {% block styles %}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'assets/css/static' %}">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   {% endblock %}
+
+  <!-- The best place for this one is your <HEAD> tag -->
+  <script>UPLOADCARE_PUBLIC_KEY = "21fb134561af1fda9b52";</script>
+  <script src="https://ucarecdn.com/libs/widget/3.7.4/uploadcare.full.min.js" charset="utf-8"></script>
 </head>
+
 <body>
   <style>
-      @import url('https://fonts.googleapis.com/css?family=Courier+Prime&display=swap');
-      body{
-        font-family: 'Courier Prime', monospace;
-      }
+    @import url('https://fonts.googleapis.com/css?family=Courier+Prime&display=swap');
 
-    </style>
-{% block content %}
+    body {
+      font-family: 'Courier Prime', monospace;
+    }
+  </style>
+  {% block content %}
   <!-- Header -->
-<  <header id="header">
-<a href="index.html">  <h1><strong>Mapicha</strong>Fine</h1></a>
+  <header id="header">
+    <a href="index.html">
+      <h1><strong>Mapicha</strong>Fine</h1>
+    </a>
     <nav>
-      
-                   
-                   
-        
 
-   
       <ul>
         <li><a href="#footer" class="icon solid fa-info-circle">About</a></li>
       </ul>
     </nav>
   </header>
- {% endblock %}
+  {% endblock %}
 
 
-<!-- Footer -->
-<footer id="footer" class="panel">
-  <div class="inner split">
-    <div>
-      <section>
-        <h3>Magna feugiat sed adipiscing</h3>
-        <p class="desc">Nulla consequat, ex ut suscipit rutrum, mi dolor tincidunt erat, et scelerisque turpis ipsum
-          eget quis orci mattis aliquet. Maecenas fringilla et ante at lorem et ipsum. Dolor nulla eu
-          bibendum sapien. Donec non pharetra dui. Nulla consequat, ex ut suscipit rutrum, mi dolor
-          tincidunt erat, et scelerisque turpis ipsum.</p>
-      </section>
-      <section>
-      <form class="navbar-form" role="search" action="{% url 'search_results' %}">
+  <!-- Footer -->
+  <footer id="footer" class="panel">
+    <div class="inner split">
+      <div>
+        <section>
+          <h3>Magna feugiat sed adipiscing</h3>
+          <p class="desc">Nulla consequat, ex ut suscipit rutrum, mi dolor tincidunt erat, et scelerisque turpis ipsum
+            eget quis orci mattis aliquet. Maecenas fringilla et ante at lorem et ipsum. Dolor nulla eu
+            bibendum sapien. Donec non pharetra dui. Nulla consequat, ex ut suscipit rutrum, mi dolor
+            tincidunt erat, et scelerisque turpis ipsum.</p>
+        </section>
+        <section>
+          <form class="navbar-form" role="search" action="{% url 'search_results' %}">
 
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search Image" name="image">
-            <div class="input-group-btn">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search Image" name="image">
+              <div class="input-group-btn">
                 <button type="submit" class="btn btn-outline-success">Search</button>
+              </div>
             </div>
-        </div>
 
-    </form>
-  </section>
-  <a href="/admin" class="nav-item nav-link">Admin</a>
-      <section>
-        <h2>Follow me on ...</h2>
-        <ul class="icons">
-          <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-          <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
-          </li>
-          <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
-          </li>
-          <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-          <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-          <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a>
-          </li>
-        </ul>
-      </section>
-      <p class="copyright">
-        &copy; Unttled. Design: <a href="http://html5up.net">HTML5 UP</a>.
-      </p>
+
+          </form>
+        </section>
+        <section>
+          <form>
+            <div class="input-group-btn">
+              {% if user.is_authenticated %}
+              <a href=""><button type="submit" class="btn btn-outline-success">Submit a
+                  photo</button></a>
+              {% else %}
+              <a class='btn btn-default' href="/accounts/login">Login</a>
+              {% endif %}
+            </div>
+          </form>
+        </section>
+        <section>
+          <h2>Follow me on ...</h2>
+          <ul class="icons">
+            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
+            </li>
+            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
+            </li>
+            <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+            <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+            <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a>
+            </li>
+          </ul>
+        </section>
+        <p class="copyright">
+          &copy; Unttled. Design: <a href="http://html5up.net">Nyakinyua</a>.
+        </p>
+      </div>
+
     </div>
+  </footer>
 
-  </div>
-</footer>
-
-      <script src="../../static/assets/js/jquery.min.js"></script>
-			<script src="../../static/assets/js/jquery.poptrox.min.js"></script>
-			<script src="../../static/assets/js/browser.min.js"></script>
-			<script src="../../static/assets/js/breakpoints.min.js"></script>
-			<script src="../../static/assets/js/util.js"></script>
-			<script src="../../static/assets/js/main.js"></script>
+  <script src="../../static/assets/js/jquery.min.js"></script>
+  <script src="../../static/assets/js/jquery.poptrox.min.js"></script>
+  <script src="../../static/assets/js/browser.min.js"></script>
+  <script src="../../static/assets/js/breakpoints.min.js"></script>
+  <script src="../../static/assets/js/util.js"></script>
+  <script src="../../static/assets/js/main.js"></script>
 </body>
+
 </html>

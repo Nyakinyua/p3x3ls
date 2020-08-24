@@ -1,5 +1,7 @@
 from django.db import models
 import datetime as dt
+from pyuploadcare.dj.models import ImageField
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Location(models.Model):
@@ -27,7 +29,7 @@ class Category(models.Model):
         return self.name
     
 class Image(models.Model):
-    joy_image = models.ImageField( upload_to ='images/')
+    joy_image = models.ImageField(upload_to='images/',blank=True)
     image_name = models.CharField(max_length=20)
     description = models.TextField()
     location = models.ForeignKey(Location,on_delete=models.CASCADE)
@@ -64,5 +66,30 @@ class Image(models.Model):
         image = cls.objects.filter(category__name__icontains=search_term)
         return image
     
+    @classmethod
+    def search_users(cls,term):
+        result=cls.objects.filter(user__username__icontains=term)
+        return user
+    
+    
     class Meta:
         ordering =  ['image_name']
+        
+class Profile(models.Model):
+    '''
+    Class that creates instance of a new user
+    '''
+    user = models.OneToOneField(User,on_delete=models.CASCADE)
+    bio = models.TextField(max_length=1000)
+    profile_photo = models.ImageField(upload_to='profile',blank=True)
+    
+    
+    def __str__(self):
+        return self.bio
+    
+    def save_profile(self):
+        return self.save()
+    
+    def delete_profile(self):
+        profile=Profile.objects.all().delete()
+        return profile

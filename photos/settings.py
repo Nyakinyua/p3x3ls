@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'pyuploadcare.dj',
     
 ]
 
@@ -77,7 +78,7 @@ ROOT_URLCONF = 'photos.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -90,6 +91,11 @@ TEMPLATES = [
         },
     },
 ]
+
+UPLOADCARE = {
+    'pub_key':'21fb134561af1fda9b52',
+    'secret':'11b93a0a99e003ed3702',
+}
 
 WSGI_APPLICATION = 'photos.wsgi.application'
 
