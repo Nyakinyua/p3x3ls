@@ -43,7 +43,7 @@ def uploadPhoto(request):
     return render(request,'upload.html',{'posts':posts,'form':form})
 
 
-@login_required(login_url='/accounts/login')
+
 def profile(request):
     profile = Profile.objects.filter(user=request.user)
     post = Posts.objects.filter(posted_by=request.user)
