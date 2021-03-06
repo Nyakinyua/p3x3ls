@@ -33,7 +33,7 @@ if config('MODE')=="dev":
        }
        
    }
-production
+# production
 else:
     DATABASES = {
         'default': dj_database_url.config(
