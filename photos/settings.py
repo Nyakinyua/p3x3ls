@@ -14,35 +14,53 @@ import os
 import django_heroku
 import dj_database_url
 from decouple import config,Csv
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 MODE=config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 # development
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 if config('MODE')=="dev":
-   DATABASES = {
-       'default': {
-           'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': config('DB_NAME'),
-           'USER': config('DB_USER'),
-           'PASSWORD': config('DB_PASSWORD'),
-           'HOST': config('DB_HOST'),
-           'PORT': '',
-       }
-       
-   }
-# production
-else:
     DATABASES = {
-        'default': dj_database_url.config(
-            default=config('DATABASE_URL')
-        )
-    }    
+        'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'p3x3ls',
+        'USER': 'nyakinyua',
+        'PASSWORD': 'Lastman',
+        'HOST': 'LocalHost',
+        'PORT': '5432',
+        }
+    }
+# if config('MODE')=="dev":
+#    DATABASES = {
+#        'default': {
+#            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#            'NAME': config('DB_NAME'),
+#            'USER': config('DB_USER'),
+#            'PASSWORD': config('DB_PASSWORD'),
+#            'HOST': config('DB_HOST'),
+#            'PORT': '',
+#        }
+       
+#    }
+# production
+# else:
+#     DATABASES = {
+#         'default': dj_database_url.config(
+#             default=config('DATABASE_URL')
+#         )
+#     }    
 
-    db_from_env = dj_database_url.config(conn_max_age=500)
-    DATABASES['default'].update(db_from_env)
+#     db_from_env = dj_database_url.config(conn_max_age=500)
+#     DATABASES['default'].update(db_from_env)
 
-    ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+#     ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -93,8 +111,8 @@ TEMPLATES = [
 ]
 
 UPLOADCARE = {
-    'pub_key':'21fb134561af1fda9b52',
-    'secret':'11b93a0a99e003ed3702',
+    'pub_key':'fd0e6165eedf5e306947',
+    'secret':'b529d4d82d46384e99a5',
 }
 
 WSGI_APPLICATION = 'photos.wsgi.application'

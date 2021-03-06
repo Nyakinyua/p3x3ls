@@ -20,13 +20,83 @@
                     <div class="card-header">
                         <h4>{{image_item.image_name}}</h4>
                     </div>
-                    <img class="card-img-top" class="img-responsive" src="{{image_item.joy_image.url}}">
+                    <img class="card-img-top" class="img-responsive" src="{{image_item.photo.cdn_url}}">
                 </div>
             </div>
                 {% endfor %}
             {% endif %}
         </div>
     </div>
+    <header id="header">
+        <a href="{% url 'index' %}">
+          <h1><strong>Mapicha</strong>Fine</h1>
+        </a>
+        <nav>
+    
+          <ul>
+            <li><a href="#footer" class="icon solid fa-info-circle">About</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+    
+    
+      <!-- Footer -->
+      <footer id="footer" class="panel">
+        <div class="inner split">
+          <div>
+            <section>
+              <h3>MapichaFine</h3>
+              <p class="desc">“If you see something that moves you, and then snap it, you keep a moment.”
+                — Linda McCartney</p>
+                <p class="desc">“Taking pictures is savoring life intensely, every hundredth of a second.”
+                  — Marc Riboud</p>
+            </section>
+            <section>
+              <form class="navbar-form" role="search" action="{% url 'search_results' %}">
+    
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search Image" name="image">
+                  <div class="input-group-btn">
+                    <button type="submit" class="btn btn-outline-success">Search</button>
+                  </div>
+                </div>
+    
+    
+              </form>
+            </section>
+            <section>
+              <form class="navbar-form" role="Submit" action="{% url 'uploadPhoto' %}">
+                <div class="input-group-btn">
+                 
+                  <a href=""><button type="submit" class="btn btn-outline-success">Submit a
+                      photo</button></a>
+                 
+                  
+                </div>
+              </form>
+            </section>
+            <section>
+              <h2>Follow me on ...</h2>
+              <ul class="icons">
+                <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
+                </li>
+                <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
+                </li>
+                <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a>
+                </li>
+              </ul>
+            </section>
+            <p class="copyright">
+              &copy; Unttled. Design: <a href="http://html5up.net">Nyakinyua</a>.
+            </p>
+          </div>
+    
+        </div>
+      </footer>
     {% endblock %}
 
 

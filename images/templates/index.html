@@ -4,34 +4,22 @@
 {{block.super}}
 <div id="wrapper">
     <div id="main">
-        {% for image_item in images %}
+        {% if posts %}
+        {% for post in posts %}
         <article class="thumb">
-            <a href="{{image_item.joy_image.url}}" class="image"><img src="{{image_item.joy_image.url}}"
-                    alt="eiffel tower" /></a>
-            <h2>{{image_item.name}}</h2>
-            <p>{{image_item.category}}</p>
-            <p>{{image_item.description}}</p>
+            <a href="{{post.photo.cdn_url}}" class="image"><img src="{{ post.photo.cdn_url }}"
+                    alt="eit" /></a>
+            <h2>{{post.name}}</h2>
+            <p>{{post.category}}</p>
+            <p>{{post.description}}</p>
           
         </article>
         {% endfor %}
-
-
+        {% endif %}
 
 
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

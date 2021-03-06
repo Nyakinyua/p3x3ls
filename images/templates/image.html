@@ -1,9 +1,10 @@
 {%extends 'layout.html'%}
 
 {% block content %}
-
+{{block.super}}
 <div class="container">
-<img src={{image.joy_image.url}}  class="img-responsive" alt="image_item" width="300px" >
+    <img src="{{ image.photo.cdn_url }}"
+     class="img-responsive" alt="image_item" width="300px" >
 </div>
 
 

@@ -10,7 +10,7 @@ urlpatterns=[
     path('image/<int:id>',views.image,name='image'),
     path('search/', views.search_results, name="search_results"),
     url(r'^logout/$',views.logout_user,name="logout_user"),
-    # path('uploadPhoto/', views.upload_photo, name="uploadPhoto"),
+    path('uploadPhoto/', views.uploadPhoto, name="uploadPhoto"),
     path('profile/',views.profile,name='profile'),
 ]
 if settings.DEBUG:

@@ -18,7 +18,7 @@
   {% else %}
   <title>Mapicha Fine</title>
   {% endif %}
-
+  <!-- {{ form.media }} -->
   {% block styles %}
   {% bootstrap_css %}
   <link rel="stylesheet" href="{% static 'assets/css/static' %}">
@@ -26,7 +26,7 @@
   {% endblock %}
 
   <!-- The best place for this one is your <HEAD> tag -->
-  <script>UPLOADCARE_PUBLIC_KEY = "21fb134561af1fda9b52";</script>
+  <script>UPLOADCARE_PUBLIC_KEY = "fd0e6165eedf5e306947";</script>
   <script src="https://ucarecdn.com/libs/widget/3.7.4/uploadcare.full.min.js" charset="utf-8"></script>
 </head>
 
@@ -40,8 +40,9 @@
   </style>
   {% block content %}
   <!-- Header -->
+ 
   <header id="header">
-    <a href="index.html">
+    <a href="{% url 'index' %}">
       <h1><strong>Mapicha</strong>Fine</h1>
     </a>
     <nav>
@@ -51,7 +52,7 @@
       </ul>
     </nav>
   </header>
-  {% endblock %}
+  
 
 
   <!-- Footer -->
@@ -59,11 +60,11 @@
     <div class="inner split">
       <div>
         <section>
-          <h3>Magna feugiat sed adipiscing</h3>
-          <p class="desc">Nulla consequat, ex ut suscipit rutrum, mi dolor tincidunt erat, et scelerisque turpis ipsum
-            eget quis orci mattis aliquet. Maecenas fringilla et ante at lorem et ipsum. Dolor nulla eu
-            bibendum sapien. Donec non pharetra dui. Nulla consequat, ex ut suscipit rutrum, mi dolor
-            tincidunt erat, et scelerisque turpis ipsum.</p>
+          <h3>MapichaFine</h3>
+          <p class="desc">“If you see something that moves you, and then snap it, you keep a moment.”
+            — Linda McCartney</p>
+            <p class="desc">“Taking pictures is savoring life intensely, every hundredth of a second.”
+              — Marc Riboud</p>
         </section>
         <section>
           <form class="navbar-form" role="search" action="{% url 'search_results' %}">
@@ -79,28 +80,27 @@
           </form>
         </section>
         <section>
-          <form>
+          <form class="navbar-form" role="Submit" action="{% url 'uploadPhoto' %}">
             <div class="input-group-btn">
-              {% if user.is_authenticated %}
+             
               <a href=""><button type="submit" class="btn btn-outline-success">Submit a
                   photo</button></a>
-              {% else %}
-              <a class='btn btn-default' href="/accounts/login">Login</a>
-              {% endif %}
+             
+              
             </div>
           </form>
         </section>
         <section>
           <h2>Follow me on ...</h2>
           <ul class="icons">
-            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
+            <li><a href="https://twitter.com/nyaki_____nyua" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="https://facebook.com" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
             </li>
-            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
+            <li><a href="https://www.instagram.com" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
             </li>
-            <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+            <li><a href="https://github.com/Nyakinyua" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
             <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-            <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a>
+            <li><a href="https://www.linkedin.com/in/joyce-nyakinyua-wanjiru" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a>
             </li>
           </ul>
         </section>
@@ -111,7 +111,7 @@
 
     </div>
   </footer>
-
+  {% endblock content %}
   <script src="../../static/assets/js/jquery.min.js"></script>
   <script src="../../static/assets/js/jquery.poptrox.min.js"></script>
   <script src="../../static/assets/js/browser.min.js"></script>
