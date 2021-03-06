@@ -47,7 +47,7 @@ def uploadPhoto(request):
 def profile(request):
     profile = Profile.objects.filter(user=request.user)
     post = Posts.objects.filter(posted_by=request.user)
-    messages = "This is the user profile page"
+    
 
-    return render(request, 'profile.html', {'profile': profile, 'messages': messages, 'post': post})
+    return render(request, 'profile.html', {'profile': profile,'post': post})
     
