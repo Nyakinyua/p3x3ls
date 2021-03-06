@@ -51,11 +51,3 @@ def profile(request):
 
     return render(request, 'profile.html', {'profile': profile, 'messages': messages, 'post': post})
     
-@login_required(login_url="/accounts/login/")
-def logout_user(request):
-    '''
-    view function renders home page once logout
-    '''
-    
-    logout(request)
-    return redirect('/')
