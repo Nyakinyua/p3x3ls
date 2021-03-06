@@ -1,4 +1,4 @@
-# [P3x3ls](https://github.com/Nyakinyua/pexels.org)
+# [P3x3ls](https://github.com/Nyakinyua/p3x3ls.org)
 
 This project was generated with [Python](https://www.python.org/) version 3.6.9 <br>
 
@@ -30,7 +30,7 @@ Features of the application
 ### Cloning
 * In your terminal:
 
-        $ git clone https://github.com/Nyakinyua/pexels.org
+        $ git clone https://github.com/Nyakinyua/p3x3ls.org
         $ cd pexels
 
 ## Running the Application
