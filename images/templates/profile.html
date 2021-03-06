@@ -1,10 +1,9 @@
 {%extends 'layout.html'%}
 {% load bootstrap4%}
 {%load static%}
+
+
 {% block content%}
-
-
-
 
 <div class="container prof" style="padding-top:5em">
     <br><br>
@@ -30,7 +29,7 @@
 
                     {%for i in profile%}
                     <strong>User:{{user|upper}}</strong>
-                    <p><strong>BIO:</strong>{{i.bio}}</p>
+          
 
                     {%endfor%}
                 </div>
